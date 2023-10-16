@@ -29,7 +29,7 @@
     </div>
     <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
     <script type="module">
-        import MessageList from './components/MessageList.js';
+        import MessageList from './components/MessageList.js'
         let vm = new Vue({
             // 적용되는 태그명
             el: '#app',
@@ -41,7 +41,7 @@
 
             computed: {
                 addDisabled () {
-                    return this.messages.length >= 10 || this.newMessage.length > 50;
+                    return this.messages.length >= 10 || this.newMessage.length > 50
                 }
             },
 
@@ -55,8 +55,9 @@
             methods:{
                 addMessage (event){
                     if (!this.newMessage) return
-                        this.messages.push({text: this.newMessage, createdAt: new Date()})
-                        this.newMessage = ''                    
+                    let now = new Date()
+                    this.messages.push({text: this.newMessage, createdAt: now, id: now.getTime()})
+                    this.newMessage = ''                    
                 },
                 deleteMessage (message) {
                     // Array.prototype.splice() : messages 배열에서 선택된 메시지를 삭제한다
@@ -64,8 +65,7 @@
                     this.messages.splice(this.messages.indexOf(message), 1)
                 }
             }
-        });
-    </script>
-    
+        })
+    </script>    
 </body>
 </html>
