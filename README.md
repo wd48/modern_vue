@@ -16,3 +16,20 @@ npm http-server
 ***
 > SOP (Same Origin Policy : 동일 출처 정책)   
 > : 어떤 출처 (origin)에서 불러온 문서나 스크립트가 다른 출처에서 가져온 리소스와 상호작용하는 것을 제한하는 브라우저의 보안 방식
+
+## How to run the code?
+
+---
+you will need to put the code under a HTTP server to run the code inside this folder. Opening <code>index.html</code> directily as a file in a browser won't work.
+   
+if you do not have a HTTP server installed, you can use the following command to install <code>http-server</code>, which is a simple and easy-to-use command-line HTTP server.
+```bash
+npm install http-server -g
+```
+Once it is installed, switch to each stage folder and run <code>http-server</code> and open URL http://localhost:8080 in your browser. For example, to run the stage1 code, you can do with the following steps.
+
+```shell
+$ cd stage1
+$ http-server
+```
+You can specify the port number to be other than <code>8080</code>. For example, with command <code>http-server -p 3030</code>, port <code>3030</code> will be used.
