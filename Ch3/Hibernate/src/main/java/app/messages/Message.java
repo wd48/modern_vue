@@ -19,6 +19,7 @@ public class Message {
   @Temporal(TemporalType.TIMESTAMP)
   private Date createdDate;
 
+  // 기본 생성자
   public Message() {}
 
   public Message(String text) {
